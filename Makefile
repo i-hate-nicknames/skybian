@@ -54,10 +54,12 @@ build-skyconf: ## builds skyconf.
 	${OPTS} go install ./cmd/skyconf
 
 build-skybian-img: ## builds skybian base image.
-	rm -rf ./output/*
-	./build.sh -c 2>&1 /dev/null
 	./build.sh
 	./build.sh -p
+
+clean:
+	rm -rf ./output/*
+	./build.sh -c 2>&1 /dev/null
 
 build-skyimager-gui: ## builds skyimager GUI
 	./build-skyimager.sh
